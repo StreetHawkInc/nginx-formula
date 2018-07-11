@@ -39,8 +39,10 @@ nginx_official_repo:
     - file: /etc/apt/sources.list.d/nginx-official-{{ grains['oscodename'] }}.list
     - keyid: ABF5BD827BD9BF62
     - keyserver: keyserver.ubuntu.com
+    {%- if from_official %}
     - require_in:
       - pkg: nginx_install
+    {%- endif %}
     - watch_in:
       - pkg: nginx_install
 
