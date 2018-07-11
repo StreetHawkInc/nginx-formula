@@ -42,9 +42,9 @@ nginx_official_repo:
     {%- if from_official %}
     - require_in:
       - pkg: nginx_install
-    {%- endif %}
     - watch_in:
       - pkg: nginx_install
+    {%- endif %}
 
 nginx_ppa_repo:
   pkgrepo:
